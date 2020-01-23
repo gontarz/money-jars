@@ -1,7 +1,7 @@
 # Create your views here.
 from rest_framework import viewsets
-from rest_framework.decorators import action
-from rest_framework.response import Response
+# from rest_framework.decorators import action
+# from rest_framework.response import Response
 
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import OrderingFilter
@@ -24,24 +24,25 @@ class JarViewSet(viewsets.ModelViewSet):
     filterset_fields = ('currency', 'name', 'created', 'updated')
     ordering_fields = ('created', 'updated', 'amount', 'name', 'currency')
 
-    @action(methods=['get'], detail=True,
-            # permission_classes=[IsAdminOrIsSelf]
-            )
-    def operations(self, request, pk=None):
-
-        jar_operations = Operation.objects.filter(jar=pk)
-
-        return Response([o.amount_operation for o in jar_operations])
-
-        if jar_operations is not None:
-            serializer = OperationSerializer(data=jar_operations)
-
-            if serializer.is_valid():
-                return Response(serializer)
-                return self.get_paginated_response(serializer.data)
-
-            print(serializer, serializer.data)
-            return Response(serializer.data)
+    # TODO: create operations listing
+    # @action(methods=['get'], detail=True,
+    #         # permission_classes=[IsAdminOrIsSelf]
+    #         )
+    # def operations(self, request, pk=None):
+    #
+    #     jar_operations = Operation.objects.filter(jar=pk)
+    #
+    #     return Response([o.amount_operation for o in jar_operations])
+    #
+    #     if jar_operations is not None:
+    #         serializer = OperationSerializer(data=jar_operations)
+    #
+    #         if serializer.is_valid():
+    #             return Response(serializer)
+    #             return self.get_paginated_response(serializer.data)
+    #
+    #         print(serializer, serializer.data)
+    #         return Response(serializer.data)
 
 
 class OperationViewSet(viewsets.ModelViewSet):
@@ -68,3 +69,5 @@ class TransactionViewSet(viewsets.ModelViewSet):
 
     filterset_class = TransactionFilter
     ordering_fields = ('created', 'updated', 'currency', 'title')
+
+    # TODO: create transaction action
