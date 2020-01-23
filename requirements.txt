@@ -1,0 +1,22 @@
+## app
+django==3.0
+djangorestframework==3.11.0
+
+django-environ==0.4.5
+
+
+##drf addons
+django-filter==2.2.0
+
+markdown==3.1.1
+Pygments==2.5.2
+
+drf-yasg==1.17.0
+
+
+## database
+mysqlclient==1.4.6
+
+
+## server
+gunicorn==20.0.4
