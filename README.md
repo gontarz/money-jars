@@ -1,8 +1,8 @@
-#DRF based simple wallet-like api
+# DRF based simple wallet-like api
 
 use to keep data about cash amount and currencies, deposit, withdraw and transfer cash inside app
 
-###installation:
+### installation:
 download or clone 
 - using docker: run docker
 ```buildoutcfg
@@ -15,4 +15,4 @@ docker-compose run web python manage.py createsuperuser
 ```buildoutcfg
 pip install -r requirements.txt
 ```
-go to http://0.0.0.0:8000/admin/
+visit http://0.0.0.0:8000/admin/
