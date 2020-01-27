@@ -88,6 +88,10 @@ class TransactionSerializer(serializers.HyperlinkedModelSerializer):
         if withdraw := validated_data.get('withdraw'):
             validated_data['withdraw'] = operation_serializer.create(withdraw)
 
+        if withdraw and deposit:
+            if withdraw != deposit:
+                raise serializers.ValidationError("withdraw and deposit value must be equal to accomplish transaction")
+
         transaction = Transaction.objects.create(
             **validated_data
         )
