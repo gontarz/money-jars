@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+"""
+description: money_jars models
+TODO: change values fields to Decimal to avoid not precise float representation of values
+"""
+
 from django.db import models
 
 
