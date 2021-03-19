@@ -1,6 +1,6 @@
 ## app
 django==3.0
-djangorestframework==3.11.0
+djangorestframework==3.11.2
 
 django-environ==0.4.5
 
